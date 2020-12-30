@@ -1,0 +1,965 @@
+SOFTWARE DEVELOPMENT
+
+- Introduction
+    Waterfall Method
+        Requirements -> Design -> Implementation -> Verification -> Operation and Maintenance
+
+        Step-by-step:
+        1. Customer requirements, analysis, prototyping
+            i. It's quite hard to predict which will be the requirements one or two years ahead
+            ii. The miss interpretation in that stages runs all down until the Operation and Maintenance stage
+        2. Architecture, High level Design, Low level Design
+            i. What are the different components and how will they work together?
+        3. Coding and unit testing
+        4. Integration, testing, UAT
+            i. UAT stands for User Acceptance Testing
+        5. Operation and Maintenance
+
+    Agile
+        It's not a model, it's a mindset!
+        Build the software in short (waterfall) cycles
+            After every cycle there are changes (but small)
+
+        How to respond quickly and confidently in an Agile Software Development?
+            1. Continuous integration
+                i. As soon as a code is committed, it's integrated with all the other software components
+            2. Automated testing
+                i. The software is tested to make sure nothing is broken in the system
+            3. Automated deployment
+                i. It avoids manual errors and reduces the developers' efforts to deploy a code
+
+    Models
+        In general, a software development is in between the following classifications
+        
+        Classification 1
+            Predictive (waterfall)
+                The team has a pretty good understanding of the requirements
+                The product is given in one shot
+                Do not allow changes during the development phase
+            Adaptive
+                The customers have an idea of what they want to build, but they're not sure what exactly is it
+                The team build a small version of the software, then they build a larger version, based on the customers' feedback, and so on...
+                The final product tends to be different from what was originally thought
+
+        Classification 2
+            Incremental
+                The team has a fairly good understanding of the requirements
+                The software is developed in increments (instead of one shot)
+                    Parts of the project are developed separately
+                It's good if the company can benefit from the increment models or if they're to change the increments based on the feedbacks received on the previous increments
+            Iterative
+                The customers have an idea of what they want to build
+                Different versions of the software are fully developed and tested
+                    After feedback the team may replace the software with something completely different
+
+            In an Agile Software Development, models can be both incremental and iterative or none of them (just one shot, predictive)
+                
+- Agile values and principles
+    Agile comes from necessity - Necessity is the mother of invention
+    
+    Assumptions behind predictive model
+        The requirements are predicted accurately, it won't change much
+            If the requirements are incorrect, you're fucked!
+            It's very difficult to predict the requirements early on
+            Sometimes by the time the market shifts and the user needs changes
+        Translation is perfect between stages (requirement, design, implementation, verification, deployment and operation and maintenance
+            If there are miss understandings between the different stages, you're fucked!
+            In this model the problem is found very late and the cost to change it increase significantly
+            
+    To avoid this issues from predictive models, people all around the world were trying new models, focusing on small learning cycles, short iterations and adaptations based on what you learn
+        The objective is keeping the cost of changes low!
+        
+    Software development is a creative process and we need adaptive methods to be successful at it!
+    
+    Agile Manifesto
+        In 2001 a group of 17 software visionaries decided to understand why so many software projects were failing
+        They knew the industry needed a fundamental shift in values
+        
+        "We are uncovering better ways of developing software by doing it and helping others do it."
+        
+        1. Individuals and interactions over processes and tools
+            Face to face chat should trump rigid workflows and impersonal forms of communication
+            A lot of problems come from low investments on individuals and interactions, when the team focus only on finding new processes and tools
+        2. Working software over comprehensive documentation
+            Traditional software development often produces extensive documentation before the program is released for initial testing
+            Wouldn't that be better to have the program than a book describing it?
+            Documentation must be elaborated, but the customer cares about the working software first
+        3. Costumer collaboration over contract negotiation
+            Instead of defining the exact details of the project before it starts, teams and costumers should collaborate to find the best solutions
+            Contract is important to define the boundaries where the team should work, but only with collaboration it's possible to understand the user needs
+        4. Responding to change over following a plan
+            Nothing goes entirely according to plan, therefore, it's much more effective to make adjustments as the situation changes
+            Plan is needed, but we shouldn't be blinded by the plan and develop something that the user may not need
+        
+    Agile principles
+        1. Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+            "Waste: anything our customer isn't willing to pay for."
+            At the end of day, costumers pay for working software and services, not the effort the got us there
+        2. Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+            Agile embraces empiricism.
+            As the project goes forward we earn knowledge that can applied on the software.
+            The customer learn more about their own needs when they see an increment of our work.
+            Inevitably we learn something during the development cycle that clearly demonstrates that the current plan is not wise, possible, or both.
+        3. Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+            It depends on the size and nature of the project.
+            The more frequently we delivery software, more likely we are to receive an incorporate feedback from the costumer, in real world use of the product.
+        4. Business people and developers must work together daily throughout the project.            
+        5. Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+            The three things that motivated us the most are autonomy, mastery, and purpose, not financial rewards (Drive, Daniel H. Pink).
+            We must focus on developing their employees full potential, so they have to do the means to deliver the wins that we desire.
+        6. The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+            Don't let written documentation requirements get in the way of talking to one another.
+            This is all about customer collaboration over contract negotiation.
+        7. Working software is the primary measure of progress.
+            This is a lot like the first principle, a highest priority is to satisfy the customer through early and continuous delivery, a valuable software.
+            No value could be captured by the company for these effort until working software is in production. 
+        8. Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+            Developing software should be like running a long marathon, excessive effort can rapidly exhaust teams, burnout employees, and even impact relationships at home.
+        9. Continuous attention to technical excellence and good design enhances agility.
+        10. Simplicity - the art of maximizing the amount of work not done - is essential.
+            More features for poor architectural decisions make a software more complex.
+            Higher complex code is harder to test, maintain, and develop against.
+            Many products have features are so rarely used that the development and maintenance likely result a negative return on investment.
+            It's better to have a targeted product that does a few things extraordinarily well, being everything to someone other than one that attempts to cash in the entire market or pleases no one.
+        11. The best architectures, requirements, and designs emerge from self-organizing teams.
+            Let the teams talk to one another.
+        12. At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+            All the agile values and principles, and with them all the benefits of agile could provide, came from expert teams applying the empirical process to optimizing how they work.
+            If the team wants to vary from an agile frameworks default process: plan, do, check, act.
+        
+        Cons of Agile
+            1. Since change is embraced, there is a lot of unpredictability and people feel lack of control and uncomfortable
+            2. Since the costumer has to be involved throughout the process, more time must be spent on the project
+
+- Applying Agile Mindset
+    Recap
+        Predictive model (waterfall)
+            We can predict the requirements accurately
+            Translations will be perfect
+            The later we realize predictions are no true, the higher the cost
+
+        Agile principles
+            Adaptive model
+                a) Deliver working software frequently
+                b) Welcome change
+                c) Technical excellence and good design
+                d) Continuous improvement
+                e) Simplicity
+            People and interaction
+                f) Business and developer work together
+                g) face-to-face conversations
+                h) Self organizing teams
+                i) Promote sustainable development
+                j) Motivated individuals
+            Pros
+                Detect translation issues early - a, b, f, g
+                Validate user needs earlier - a, b, f, g
+            Cons
+                Architecture/Design/Database modeling is challenging - a, b
+                Lack of control is uncomfortable for leaders and organizations - a, b
+                Requires participation from customers throughout the development process - f, g
+    
+    Benefits and challanges
+        Benefits of agile adoption (survey)
+            Ability to manage changing priorities - 88%
+            Project visibility - 83%
+            Increases team product productivity - 83%
+            Delivery speed to market - 81%
+            Team morale - 81%
+            Business and IT alignment - 76%
+            Software quality - 75%
+            Project predictability - 75%
+            Project risk reduction - 74%
+
+        Barriers to agile adoption (survey)
+            Company philosophy or culture at odds with core agile values - 63%
+            Lack of experience with agile methods - 47%
+            Lack of management support - 45%
+            General organization resistance to change - 43%
+            Lack of business, customer, and product owner - 41%
+
+    Using Agile methods
+        When to use Agile
+            It can succeed small and large size projects
+                CGI, Lockheed Martin, Google, Microsoft, SpaceX...
+        When not to use Agile
+            Not suitable for predictive and repeatable work
+        Needs to apply Agile
+            Requires close collaboration with business and users
+            "Team should be setup to digest change." - Engineering practices
+
+    Applying Agile method to a project
+        Implement software in small batch size chunks
+            Cycles: plan, build, learn and repeat
+            The product shapes gradually, from a scratch software to the final product
+        Encourage collaboration
+            Different from waterfall method, Agile method put all the people together from the beginning to the end
+                It includes the requirement team, the designers or architects, the developers, and so on.
+        Promote culture change
+            Strong engineering culture
+                Automated build and deployment
+                Continuous integration
+                Automated tests
+                Collective ownership
+            Adaptive planning
+            Psychological safety
+                The team must feel comfortable to contribute
+            Partner with customer
+            Collaborative environment, rather than top-down control
+            Cross functional teams
+
+        Agile project journey
+            The time consuming differs according to the size of the project, familiarity of the team with the domain, and other factors
+            Chartering (1 ~ 2 days)
+                Alignment
+                Team building
+                Spot issues
+            Discover user needs (1 week)
+                Story workshop
+                Story mapping
+            High level architecture (2 ~ 3 days)
+                Make some of the architectural decisions that must be made before proceeding further
+            Release planning (1 ~ 2 days)
+                Plan our next stop
+            Delivery (2 ~ 3 weeks)
+                Define, build, test, and learn collaboratively
+                Improve
+                Repeat!
+            UAT and Communication (optional)
+                Final check
+                Newsletters
+                Training
+            Deployment
+            Update
+                Chartering, discover user needs, high level architecture
+            Restart from release planning
+
+        Agile frameworks
+            Scrum
+                One of the most common
+                One to four weeks cycle
+                    Define, develop, design and test part of the project
+                    Incremental model
+            Kanban
+                Continuous flow model
+                Try to optimize the existing software development process
+            Scrumban
+                Scrum as the primary framework
+                Kanban to optimize the flow
+            XP (Extreme Programming)
+                Similar to Scrum, but also define some crucial engineering practices
+            Scrum XP Hybrid
+            Lean Startup
+                Good for real unpredictable markets
+
+            Stay true to the Agile principles!
+                Don't get bugged down by the practices of a specific framework
+
+- Requirements and planning
+    Getting requirements or discovering user needs
+        Help to dig what is in the customers mind to build what they're looking for
+            A lot of times the customers don't have a clear idea of what they need
+        Helps build shared understanding among all the people involved
+            Everyone must know what is going to be built
+        It's accomplished by conversation as a primary form of communication
+            Developers and business work together throughout the development process
+            Sometimes what the user meant with the documentation can be miss understood by the teams
+                Progressive refinement
+                    The 3 Cs of user stories:
+                        1. Supported by business, customers write lots of cards with high-level functionalities
+                        2. Conversations between business and developers
+                        3. Confirmation that developers got it right
+                            The two write down what they agreed upon
+                    Let the requirements change!
+
+    User story        
+        The 3 Cs:
+            1. Cards
+                Write high-level what the user wants
+            2. Conversation
+                3 Ws: Who, what and Why
+                    Who is the user?
+                    What do they want?
+                        What kind of functionality the user demands?
+                    Why they want it?
+                        How it will help them?
+                        It MUST provide value to the USER!
+                Record
+                    Facts and information about the conversation
+                    The context outside the software
+                    What can go wrong
+            3. Confirmation
+                Acceptance tests
+                    Once the story is done, what the client or product owner will check to validate it?
+                    What will we test to confirm that this story is done?
+                    How will we demonstrate this software at a product review?
+                    Use simple business and user terms, don't be to technical!
+                    Write the "What", not the "How"
+                        "A manager can approve or disapprove and audit form"
+                        rather than
+                        "A manager can click on 'Approve/Disapprove' radio button to approve an audit form"
+                    Why should an acceptance test be done?
+                        Helps you to think through the product
+                        Helps the team will build a common understanding about the product
+      
+        Template
+            As a <user role>, I want to <perform a task> so that I can <achieve the goal>.
+
+        A user story should have
+            Title
+            Estimated time
+            3 W's
+            Relevant notes
+
+        Characteristics of a good user story
+            INVEST
+                Independent
+                    It's better if one story does not depend on the other to be done
+                Negotiable
+                    Leave some details to be discussed later on
+                Valuable
+                Estimable
+                Small
+                Testable
+            These are just guidelines, don't get bugged down by it!
+
+        Levels of abstraction
+            Business level
+            User story
+            Developer story or small user story
+
+        Spikes
+            Knowledge gathering story
+            Stories for research or exploratory work
+            They're usually thrown away after its objective was completed
+        
+        Non-function requirements
+            Two different ways
+                Definition of done (applicable to all stories)
+                    The story and the tests will be applied over every sub-system
+                Create specific stories
+                    Applicable to part of the system
+            Make sure you have quantitative KPIs
+
+        Generating user stories
+            User Story Writing Workshop
+                Write as many stories as you can for the theme
+                Invite people that knows user needs (product owner and stakeholders), scrum master and development team
+                Might take few hours or days
+                
+                Step-by-step
+                    1. User analysis
+                    2. Create personas can be created
+                    3. Everybody writes stories silently around the theme
+                        Top-down, bottom-up or free formats (in groups)
+                
+                Product backlog
+                    Appropriate details
+                        Depending on when you'll need to apply the story
+                    Emergent
+                        It is always advancing in terms of user needs and details
+                    Estimated
+                        Allow to predict and plan the releases
+                    Prioritized
+
+            Story Mapping
+                Maybe it's the best way to understand user needs
+                
+                Objectives
+                    Discover user needs
+                    Organize and prioritize story backlog
+                    Understand and communicate user needs
+                    Plan releases and development
+               
+                The map
+                    Time on the x-axis, increases from left to right
+                    Priorities on the y-axis, increases from the bottom to the top
+                    User activities are on the first row (from top to bottom)
+                    User tasks are on the second row (from top to bottom)
+                    User stories are on the bottom
+                
+                Step-by-step
+                    1. Frame the problem
+                        Discover user needs
+                        3 W's
+                    2. Map the big picture
+                        a) Major activities the system will be used for
+                        b) Tasks for each activity
+                        c) Overlap tasks vertically to explore variations of the same task, as sub-tasks or task details
+                        Horizontal = AND THEN
+                        Vertical = OR
+                    3. Explore
+                        a) Capture the details from 2.c, so the participants understand that details are important and are not lost
+                            The sub-tasks can be hidden behind the correspondent main tasks, to help visualizing the map
+                        b) Go crazy
+                            Keep repeating and discussing the story over and over again until you're sure nothing is missing
+                                If something is missing, fill it in, refine the map
+                            Look for exceptions, consider other users and involve other stakeholders
+                    4. Slice out viable releases
+                        Slice away what is not needed
+                        Separate the most meaningful releases
+                            Identify the outcome, impact and success criteria
+
+                Why it should be used?
+                    It helps to communicate at different levels, based on the audience
+                       Tell the story in a user language
+                    Provide useful context for prioritization
+                    Plan releases in complete and valuable slices of functionality
+                    Foster co-ownership in the team
+                        Everybody owns the product
+                    Flexible
+
+- Agile estimation and planning
+    Agile planning
+        Multi-level planning
+            Strategy
+            Portfolio
+            Product
+                Product backlog
+                    Through story map rank stories and define releases
+            Release
+                Release backlog
+                    Group stories and define sprints
+            Iteration
+                Sprint backlog
+                    Create tasks for each story
+                    Short period of time
+            Day
+                Decide and execute tasks
+        Less upfront (predictive), but frequent
+        Plan just enough, just in time
+            Don't detail not necessary things
+                For example in release planning, it's not necessary to specify details about tasks
+        Adapt and re-plan
+        Agile approach for estimation
+            Effort vs Duration
+                Effort is the number of ideal days (uninterrupted work)
+                Duration is the whole process
+            Accuracy vs Precision
+                Precision is the exact measure
+                Accuracy is an average estimation
+                    Create boxes/buckets by time interval, or an index
+                        Sizing buckets
+                            Can be absolute (quantitative), or relative (qualitative)
+                            The bigger the item, the more complex is the story 
+                            1, 2, 3, 5, 8, 13 (Fibonacci)
+                            1, 5, 10, 20
+                            Small, Medium, Large
+            Estimation process
+                Development team decides
+                Duration depends on style, method, number of stories, understanding, knowledge, expertise, number of members
+                Styles
+                    Simple
+                        Item by item the team decides ideal days or whichever is the measure
+                    Planning Poker (quantitative)
+                        1. Everybody gets the estimation cards (number of stories)
+                        2. Explain the story
+                        3. Estimate and put one card down
+                        4. Open cards at the same time (no influences)
+                    Card Sorting (qualitative)
+                        1. Place smallest and largest stories on the table
+                        2. Silently, everybody place the stories between these two cards
+                        3. Define ranges to separate the stories in buckets (buckets can be defined beforehand)
+                        4. Silently team members can move the cards from group to another
+                            The person who did the first movement can move it back, and so on
+                            If people do not agree, the story should be thrown in a question board (?)
+    Velocity
+        Amount of work getting done in a sprint
+            Sum of the estimation of each story completed during the sprint
+        Changes based on team, project, and many other factors
+        Starting velocity is based on stories from other projects that can be compared to the actual project stories
+        If someone from the team is off for a while, maintain velocity, except if it's a large number of members
+    Release planning
+        Fixed Scope
+            How to select stories?
+                Draw the releases on stories map (horizontally), you can show it to the customer to clarify how it is going to be
+                You only want to select the stories that are strictly necessary to outcome the release, everything else should be out in the next release
+                Stories can be chosen by value, or risk mitigation, or dependencies
+            How long it will take?
+                1. Decide sprint length
+                2. Calculate velocity (or velocity range)
+                3. Total up estimate for selected stories
+                4. Total estimate / velocity = number of sprints
+                5. Number of sprints * sprint length = duration
+        Fixed Date/Time
+            What can you deliver in that time frame?
+                1. Groom backlog
+                    You must know what is high and what is low priority
+                2. Calculate velocity range
+                3. Select sprint length
+                4. Calculate the number of sprints
+                5. Number of sprints * velocity = release capacity
+                6. Organize stories in order of priority and sum their estimates until release capacity was reached
+        Release tracking
+            Release burn up
+                Graph with two curves
+                    One for the total work estimated for the release
+                        This value can grow if during the release you realize you need more time
+                    One for the work removed to meet deadline (cumulative work)
+                        It's possible to predict the release extrapolating this curve
+            Story board
+                Trello!
+            Cumulative flow diagram
+                Work units (cumulative) x time
+                    Plot one line per different status of a stories
+                        Backlog, analysis, development, test, deployed
+                        X_backlog - X_deployed = cycle time
+                        Y_blacklog - Y_deployed = work in progress (WPI)
+
+- Scrum
+    One of the most popular frameworks to implement Agile mindset
+    Build product incrementally through sprints
+    Work on one to four weeks sprints
+        1. Define, Design, Build and Test
+        2. Show product to stakeholders and check if adjustments are needed
+        3. Repeat
+
+    Roles
+        Product owner
+            Defines what need to be done and in what order
+                Talks to executives, team, stakeholders, customers, users and define need to be built
+        Scrum master
+            Helps the team to stay true to the scrum values and principles
+            Facilitate most of the meetings
+            Drive the solution of eventual problems that may surge
+        The team
+            Self-organizing
+            Do most of the building of the software
+            Include developers, testers, and others
+
+    Step-by-step
+        1. Create a product backlog
+            Defined by the product owner
+            List of prioritized user stories
+            Very high-level
+            Can change over time
+        2. Sprint planning meeting
+            The whole team get together and pick the top stories to work on in the next sprint
+            The product owner review the stories with the team and help answer questions
+        3. Sprint backlog
+            The team creates prioritized tasks out of the stories
+                Tasks are daily activities
+        4. Sprint (1-4 weeks)
+            Everybody is working on the software implementation
+            Daily scrum meeting
+                Everybody talk about what they did the day before, what they are going today and if there is any dependency
+            At the end of each sprint
+                The product development is done
+                Sprint review
+                    Talk about the product
+                    The whole team meets with stakeholders and customers and demonstrates the work that has been done
+                    Get feedback from stakeholders and customers
+                Sprint retrospective
+                    Talk about the process
+                    Only the team participates
+                    How can we do better in the next sprints?
+                        Define strategies to make it better
+                    Burn down/up charts
+                        Shows the amount of work, or days of sprint, left
+                        Provides answer for the question: are we going to make it?
+
+    Sprint planning
+        Preparation
+            Backlog grooming
+                Remove stories that are no longer relevant
+                Create new user stories for newly discovered needs
+                Reassign stories' priorities
+                    Split high priority stories to fit in the upcoming sprint
+                Estimate stories with no estimation yet
+                Correct estimations regarding newly discovered information
+            Select stories for the next sprint
+                Story map
+                    Select an area of the story map to be solved
+                Prioritize backlog and velocity
+                    Start from the top and pick stories based on velocity
+                Alternatives
+                    Something else that group want/need to work on (something to learn, a theme)
+                Make sure the 3 W's, acceptance tests, and dependencies are well defined
+
+        The sprint planning session
+            One step
+                1. Select one story from the backlog at a time (from top to bottom)
+                    Task it out until capacity is reached
+            Two steps
+                1. Select stories based on velocity of the last sprints
+                    Predict the upcoming sprint velocity
+                2. Task out and gain confidence
+            Step-by-step
+                1. Determine sprint capacity
+                    Define available effort hours for each team member
+                    Remove 2 days, which correspond to scrum activities, like preparation
+                    Sum up the work capacity of each member
+                    It can also be defined by the last sprints, as mentioned before
+                2. Review sprint goal
+                    By the end of the sprint the persona (user) will be able to do X or Y
+                3. Review potential stories
+                    Product owner explains every story
+                        People must interact and ask questions
+                    Define what makes the story okay, or ready to go
+                4. Acquire confidence
+                    Not all the team members have to participate
+                    Design discussion and task out stories
+                        How we will implement the story and what are the tasks we need to do
+                    Face-to-face conversation helps
+                    Use time box tools to make sure the discussion stay in track
+                    Estimate the task in ideal days/hours
+                5. Refine sprint goals
+                    Based on step 4
+                6. Make commitment
+                7. Create a task board (Trello)
+                    Put the stories and tasks on the task wall and start execution
+            Who should participate?
+                Anyone who can helps to make the stories
+            How long does it take?
+                It takes about 4 hours for a 2 week sprint
+                Depends on factors related to the project
+            Updates
+                In most case velocity is maintained, except when lots of people are in or out
+                If something else must be included in the sprint
+                    Contact the product owner (he decides)
+                    Evaluate if the commitment can still be achieved
+            Iteration 0
+                Take 1-2 simple stories to finish the team setup
+                    It includes set up workstations, continuous integration environment, version control, etc.
+
+    Sprint tracking
+        1. Burn down
+            Map the amount of work left
+            Start on total amount of work to be performed, finish on zero
+        2. Burn up
+            Map the amount of work that was accomplished
+            Start on zero, finish on total amount of work to be performed
+            Draw one extra line to represent the total work
+        3. Task board (Trello)
+            Visual indicator whether the team is on track or not
+            You don't want to have too many tasks in progress
+                Make sure you have the definition of done for the stories
+
+    Sprint execution
+        The team members pick the stories
+            Always taking into account priorities
+        Find balance and limit work in progress
+            Start one story, finish, and start the next story
+        Try to focus on the less stories as possible
+            It changes according to the team size and the members abilities (some people won't be able to work on some stories)
+        Generalists over specialists
+            Everyone should learn how to do general things
+            Pair programming
+        Discipline to follow the goal
+        To embrace changes, make sure you're following engineering practices
+            Continuous integration, automated deployment, and others.
+        Daily stand-up
+            Objective
+                Daily team planning
+                Collaborate
+                    Team members can ask for help
+                Identify blockers
+                Status check
+                    In progress, done, and so on
+                    It shouldn't be the main goal of the meeting
+            Who attends?
+                Team members
+                Any stakeholder who is interested
+            The team members answer three questions
+                What did you do yesterday?
+                What you will do today?
+                What are the blockers?
+                Alternative (story focused stand-up)
+                    The facilitator pickup a story and the members involved say what they did already and what has to be done
+                    Start from the top (priority)
+            Keep focus on the task board and keep it short!
+                The "parking lot" is a tool to separate long stories to discuss after the stand-up
+
+    Sprint review
+        Who attends?
+            Anybody and everybody
+                You want to show the work that has been done!
+                Make stakeholders to attend, because in this meeting you can be trust with the stakeholders
+        Review the work done in the sprint
+            Share the learning
+        Get feedback and adjust future direction
+        Celebrate
+        How long does it take?
+            Between 1 and 2 hours
+        What happens?
+            1. Summarize
+                Plan, what you have finished, learning, road blocks, and so on
+            2. Demonstration
+                Each team member prepares and presents its own demo
+                It's very important, because it motivate the team members to get their work done until the sprint review
+                    It also provides the team members a chance to receive feedback
+            3. Discussion and feedback
+            4. Adaptations
+        Don't wait for sprint review to show your work, early and regular feedback is important and sometimes necessary
+            Show to the product owner if you got it done earlier, because it may change the sprint
+
+    Sprint retrospective
+        One of the most important activities in Scrum
+            No matter how experienced your team is, you'll never get the process right at the first time
+                Make sure you're always improving the process
+        Who attends?
+            Only the team
+        It happens after each sprint
+        What happens?
+            What is working, what is not working and action item (things to make it better)
+                Every team member write in cards what they think matches with one of the three labels
+                Select just a few action items to discuss
+            Discuss the cards pointed out and suggest improvements
+            Alternative (focused retro)
+                Pick a topic a very problematic topic and work on it
+                Steps
+                    1. Set the atmosphere
+                        Make everyone feel free to share their perspectives
+                    2. Share context
+                        Based on the collected data, explains what is going on
+                    3. Identify insights
+                    4. Determine actions
+                    5. Close the retrospective
+            Avoid finger pointing!
+
+- XP (Extreme Programming)
+    Every good technique should be taken to extreme
+        Code review
+            Two developers work together and constantly give feedback to each other
+        Testing
+            Test every single time, every single code, every single release
+    What is it about?
+        Engineering practices
+        Social change
+        Lightweight
+        Adaptive in nature
+    Controversy
+        Prescriptive
+        Pair programming and incremental design
+            This is too much, too extreme
+        Scalability
+            It's hard to scale it to bigger teams
+    
+    Values
+        1. Simplicity
+            Maximizing values by doing only what is necessary
+            What is the simplest thing that could possibly work?
+                Take smaller steps towards the goal and iterate
+        2. Communication
+            Team members stuck when solving a problem, but another team member know the solution
+            The faster they communicate, the faster and better problem is solved
+                Daily face to face communication
+                Teams work together on everything, from requirements to code
+                Important for creating a sens of team and effective cooperation
+        3. Courage
+            How team act in face of fear?
+                We tell the truth about the progress
+                We don't document excuses for failure, because we plan to succeed
+                We adapt to changes whenever they happen
+        4. Feedback
+            It's important to iterate and improve
+            Generate as much feedback as a team can handle (as quickly as possible)
+                Slow down feedback if you can't adapt
+        5. Respect
+            Foundation of the previous values
+            Every person has equal value as a human being, no one is intrinsically worth more than anyone else
+                The contribution of each person need to be respected
+                I'm important and so are you!
+
+    Practices
+        Make sure that the practices are applied with their true purposes in mind
+            Don't do them just as a ritual
+        It's very prescriptive
+            At some point you may not achieve what is prescribed
+                You don't have to achieve them in day one
+                Keep making progress towards them along the project
+        Experiment and see if it helps
+        They work well together
+            Using individual practices may not promote the best XP can offer
+        
+        Primary practices
+            1. Sit together
+                Open working environment (no walls)
+                Highly collaborative environment
+                Don't do that before the team feels safe
+            2. Whole team
+                Everyone needed for the project success is part of the team
+                Team composition is dynamic
+                It's not recommended that one member is involved in more than one project
+                    It may cause lack of focus
+            3. Informative workspace
+                If the person feel lost, he or she can walk around the workspace and get and idea of the project in less than 15 seconds
+                Dynamic information
+                    Every single information must be up to date
+                Cleanliness and order
+                    It helps to think clearly about the problem
+            4. Energized work
+                Team should work only as many hours as they can be productive
+                    Burning out doesn't help the team
+                Are you sick?
+                    Stay out, rest and get well!
+                Incremental improvement
+                    Continuously try to improved productivity during the time you're together with the team
+            5. Pair programming
+                Two team members work together in a single computer machine
+                    Majority of the work is done in pairs
+                    Work alone when it's needed!
+                Benefits
+                    Keep each other on task
+                    Brainstorm refinements to the system
+                    Clarify ideas
+                    Take initiative when their partner is stuck, thus lowering frustration
+                    Hold each other accountable to the team's practices
+            6. Stories
+                Fundamental unity at on each the whole development evolve
+                Stories are flexible
+                    They only focus on the user needs
+                    How it will be applied and achieve is decided during the development
+                    It's recommended to provide the estimate to stakeholders or customers as early as possible
+                        The team can concisely decide whether the story must be done first or not, how long should we spend on it
+                    Keep stories visible in the workspace
+            7. Weekly cycle
+                Review progress
+                Select week's worth work
+                Break stories into tasks
+                    Developers can take responsibility of these tasks
+                Gradually reduce planning time
+                    It does not bring value to the customer
+            8. Quarterly cycle
+                Focus on the big picture, where the project fits within the organization
+                Plan the theme or themes for the quarter
+                Pick a quarter's worth of stories to address those themes
+                Identify bottlenecks, specially those controlled outside the team
+            9. Slack
+                Build some slack time in the process
+                    Buffer time in the planning to not feel rush to finish something
+                        If you're stuck because of something, you can always catch up
+                How?
+                    Add a few lower priority tasks that can be skipped
+                    Add one week every 8th week as a geek week
+                        Developer can choose a developer driven task for that week
+                    Add 20% time for programmer-chosen tasks
+                Avoid aggressive timeline or commitments
+            10. Ten minute build
+                Team should be able to build and run all the tests with in 10 minutes
+                New to agile struggles to achieve
+                    Start with automated build or key tests and continue to evolve
+                It gives the team confidence that can make change comfortably and reduces stress
+            11. Continuous integration
+                As soon as a developer makes a change in the code, it's integrated with the rest of the code to validate it
+                    Get the feedback as soon as possible!
+                Asynchronous integration
+                    One the developer has made change, a separate process integrates that code with the rest of the code and notifies the developer if something has to be improved
+                Synchronous integration
+                    The developer makes the change and constantly integrates with the rest of the system, and wait for the feedback to go forward
+            12. Test first programming
+                Write test -> Run tests to see if it fails -> Write code until pass the test
+                Benefits
+                    Avoid scope creep
+                    Build trust in team members
+                        You know that everybody writing the codes are also writing tests to make sure it's working properly
+                    Reduce coupling
+            13. Incremental design
+                Invest a little in design everyday
+                    If design is good, let's go to extreme and do it every day!
+                If find excess of complexity in your code, refactor the code simplify it
+                    Define variables and make it simpler to change it later
+                Architecture emerges over time
+
+    Process of developing software with XP
+        1. Release planning
+            Plan next release
+                Select what the team will deliver in the next release
+            Uses user stories and architectural spike
+                Architectural spike
+                    Type of story where the goal is to answer or solve technical or design problems
+                    Used to explore potential solutions
+                    Only address the problem under examination
+                        Ignore all other concerns
+                    Most of the work done under a spike is thrown away
+                    It can be created if there is a user story with not enough information to estimate
+                        It represent the work to do some research or build something to gain better understanding of the story
+                        With confident estimate, we go back to user story in the release planning
+            The outcome is the release plan
+                Outline where the team must work on
+        2. Iteration
+            Team needs daily stand-up meetings
+            Follow XP practices
+            The outcome is the latest code version
+        3. Acceptance tests
+            The code is tested against acceptance tests from user stories
+            If bugs are created, they're incorporate in the next iteration
+        It all repeats in the next iteration
+            It uses feedback to enhance velocity
+            Add new user stories
+        After customer approval, updated software is released to production
+
+- Differences between Scrum and XP
+    1. Scrum sprints (2-4 weeks) are in general longer than XP iterations (1-2 weeks)
+    2. Scrum does not allow changes into their sprints, while XP is more flexible
+    3. XP teams work in a strict priority order prioritized by the customer (Scrum's Product Owner), while in Scrum, the Product Owner prioritize the product backlog, but the team determines the sequence in which they will be developed
+    4. Scrum does not prescribe any engineering practice, XP does!
+        Be careful to don't let engineering practices reduces self-organization
+    Start with Scrum and invent your own version of XP
+
+- Assignment
+    Blue Bank
+    Remote deposit capture = Send scanned checks to the bank's internet portal
+    Save bank and customers time and money
+    User needs a account
+    App downloaded (cellphone) or browser plugin (computer)
+    Prompt a message to install the mobile app or the the bank's internet portal, login, and scanning
+    Service (and app) should be reliable, secure, easy to use, and integrated to the Blue Bank web site
+    Web site provides online technical support (web or phone) and instructions 24/7
+    Pre-tested scanners and appropriate hardware are sold in the web site, as well as at physical bank branches
+    Blue bank does not know what to charge: scanners or service
+    The managers are not sure about the investment, because the Blue Bank is well-known about being customer-oriented, it has several large buildings, ATMs, and remote bank services in many grocery stores (Midwest), besides that, many customers have the bank account for their whole life, but do not use its current internet banking services
+    New CEO was haired to keep young customers and prepare the bank to the future
+    Initial estimates
+        Project period = 6 months
+        Cost = $500K
+        Operation = $150K/year (for 3 years)
+        Benefits = $400K/year (for 3 years)
+    You should provide high-quality service and avoid any potential technical or user problems after implementation
+    Blue Bank wants to keep old clients and attract new clients with the remote deposit capture service
+    The team
+        4 developers
+        2 testers
+        They have offices on different floors of the building
+        They're experienced with web development, but not on mobile development
+        They don't have performance testing experience or user experience expertise
+        They're not familiar with engineering practices (automated testing, continuous integration, etc.)
+    Stakeholders
+        Business stakeholders are willing to refine the high level vision for the mobile application
+            They work in different buildings and plan to hand-off detailed requirements and planning in two weeks
+        The project should please the stakeholders
+            Harold, the sponsor
+            Tricia, the manager of marketing
+            They know about customers' needs
+            They want the remote deposit capture capability to be ready as soon as possible
+    High level vision
+        Mobile app
+            a) Download an app for iPhone, Android, and Windows phones
+            b) Login in the app using their internet portal account or using other authentication methods
+            c) View balance of their accounts
+            d) Deposit cheques to deposit account
+                i. Take secure/fraud proof pictures of cheques
+                ii. Enter details of the check
+                iii. Select account to deposit
+                iv. Validate check image against the details
+                v. Deposit the e-check into the bank account
+            e) Provide opportunity to bank to share offers and promotions
+        Browser plugin
+            a) Secure/fraud proof scanning of checks
+            b) Support IE, Firefox, Chrome, and Safari
+            c) Add support for pre-approved supported scanners
+            d) Work with other scanners that supports ISO protocols
+            e) Work seamlessly with pre-approved supported scanners
+        Changes to bank's internet portal
+            a) Create/update/delete deposit account
+            b) Scanning checks using the browser plugin
+            c) Deposite e-checks
+                i. Enter details of the check
+                ii. Validate check image against the entered details
+
+    Answers
+        1. Agile is not only a development but a mindset that brings a lot of benefits. One of the Agile values is working software, which occurs frequently during the project, assuring value to the customer, and empowering the development team. Constant interaction with the customer throughout the whole project guarantees that new user needs are covered. Each software deployed is available for users to test and provide feedback to the development team. Due to its flexibility, Agile promotes constant change, then all the feedback provided, such as new user needs, can be implemented. Moreover, the earlier change is recognized and implemented, the lower is the cost of it. To implement Agile though, it is essential to encourage interaction among everyone involved in the project. Putting all the people together creates a mutual understanding, aiming the team in the right direction. Adopting Agile mindset is an amazing experience that results in happy employees delivering great value to the customers.
+        2. The Agile mindset works in cycles and after each cycle a software is deployed. To achieve this goal, it is necessary to prioritize the right features over features that may not lead to working software. To do it so, the team must be self-organized and flexible, thus the team members can reorganize themselves to better perform in each cycle. The stakeholders are also deeply involved in each cycle. They help to build the user requirements along with the team. In some frameworks, such as Scrum, the stakeholders have the opportunity to collaborate in many meetings. The Scrum framework also defines a Scrum Master, which is a team member that focuses on helping the team and providing them a sustainable environment, which enhances productivity.
+        Some specific solutions may help the implementation of the Agile mindset on Blue Bank's team. First of all, it is important to put all the team working together in the same building (if possible in the same office or room), so they can have a frequent face-to-face conversation and perhaps work in pairs. The team members should take some time to get familiar with engineering practices and to develop performance testing, which is essential to achieve working software. Mobile development is within the project's scope, therefore, it is also a good option to hire someone who is experienced with it. Since face-to-face conversation is one of the Agile principles, the new team member will have many opportunities to share their experiences with the rest of the team. It is important that stakeholders meet frequently with the team during the planning stage, thus the requirements can be defined more quickly and the team is confident and able to work on the stories as quickly as possible. Harold and Patricia know a lot about the customers' needs and they play a fundamental role in the planning stage. Therefore, they should be present as much as possible and help the team to better understand the user needs.
+        3. The constraints of the project are scope, time, and cost. Under traditional project management scope is in general considered fixed, then time and cost are adjusted to define a complete plan. Agile mindset lays on a constant change of scope in order to provide the best software according to user needs, which can change throughout the project. To achieve a feasible plan, Agile considers time and cost as the project constraints. During the project, the user needs can be clarified and new stories may be implemented to satisfy new demands. Therefore, the scope has to be reviewed to adjust the project to the new demands. For example, eventually, new user needs will be understood as new features that were not included in the first scope. Hence, the scope would get larger and the project would demand either more time or a higher cost. To overcome this issue, a deep understanding of user needs clarifies which are the most relevant requirements that must be worked on in order to achieve high-quality working software that will satisfy users' expectations. The constraints evidence how important it is to have frequent contact with stakeholders during the project, thus the right requirements can be prioritized, guaranteeing that time and costs don't change. Using Agile, time and cost are a priority and the remote deposit capture will be available just in time, as it was planned.
+

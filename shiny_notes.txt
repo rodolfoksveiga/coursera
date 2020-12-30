@@ -1,0 +1,45 @@
+shiny rstudio
+
+reactive values act as the data streams that flow through your app
+
+the input list is a list of reactive values
+
+you can only call a reactive value from a reactive function
+
+
+reactive functions
+    1. use a code to (re)build an object
+        what code will the function use?
+    2. the object will respond to changes in a set of reactive values
+        what reactive values will the object respond to?
+
+reactive toolkit
+    render*()
+        make objects to display
+        always save the result to output$
+        renderDataTable, renderImage, renderPlot, renderPrint, renderTable, renderText, renderUI
+    reactive()
+        make an object to use (in downstream code)
+        reactive expressions are reactive and they canmodularize the app
+        call a reactive expression like a function
+    isolate()
+        make an non-reactive value (use isolate() to treat reactive values as normal values)
+        prevent an input field to update automatically
+    observeEvent()
+        triggers code to run on the server
+        specify precisely which reactive values should invalidate the observer
+        observe()
+            an observeEvent() function with a more implicit syntax
+            uses the same syntax as reder*(), reactive() and isolate()
+    eventReactive()
+        similar to reactive, but only happens after an event trigger (an action button, for example)
+        delay reactions
+        make a reactive expression
+    reactiveValues()
+        make reactive values (like the inputs)
+        the value can be manipulated by observeEvent()
+
+
+reactive expression
+    1. you call a reactive expression like a function
+    2. reactive expressions cache their values (the expression will return its most recent value unless it has become invalidated), avoiding unnecessary computation

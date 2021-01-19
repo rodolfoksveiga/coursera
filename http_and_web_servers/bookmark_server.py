@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # import libraries
+import os
 import http.server
 import requests
 from urllib.parse import unquote, parse_qs
@@ -114,7 +115,8 @@ class Shortener(http.server.BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     # define port number
-    server_address = ('', 8000)
+    port = int(os.environ.get('PORT', 8000))
+    server_address = ('', port)
     # run the server
     httpd = http.server.HTTPServer(server_address, Shortener)
     # host the server until the process is killed

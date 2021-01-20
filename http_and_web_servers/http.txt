@@ -1,0 +1,247 @@
+HTTP CRASH COURSE
+Source: YouTube
+Link: https://www.youtube.com/watch?v=iYM2zFP3Zn0
+
+
+HTTP
+	Stands for Hyper Text Transfer Protocol Secure
+	Data is encrypted in order to promote high level of security
+	Uses SSL (Secure Sockets Layer) or TLS (Transport Security Layer) to ecrypt data
+	There isn't any difference in the way you work with HTTP 1.1 and HTTP 2, but HTTP 2 is faster, safer, more efficient in general
+
+Client -> Server
+    Request
+
+Server -> Client
+    Response
+
+Status code
+
+Get (fetch)
+	Retrieves data from the server
+Post
+	Submit data to the server
+Put
+	Update data already on the server
+Delete
+	Delete data from the server
+
+Header
+	method + path + protocol
+		GET /tutorials/other/top-20-mysql-best-practices/ HTTP/1.1
+	Fields
+		General
+			Request URL
+			Request method (get, post, put, delete)
+			Status code
+				1xx: informational
+					Request received and processing
+				2xx: success
+					Successfully received, understood and accepted
+				3xx: redirect
+					Further action must be taken
+				4xx: client error
+					Request does not have what it needs
+						E.g.: the server needs a name field in the request body that couldn't be found
+				5xx: server error
+					Server failed to fulfil an apparent valid request
+			Remote address (IP of the remote computer)
+			Referrer policy
+		Reponse
+			Server
+			Set-cookie (server send small pieces of data, or cookies, to the client)
+			Content-type
+			Content-length
+			Date
+		Request
+			Cookies (cookies that were sent from the server before and you have to send it back)
+			Accept-code, accept-language, etc
+			Content-type
+			Content-length
+			Authorization (you can validate a user to access a protected page)
+			User-agent (software that the user is using, which includes the operating system, the browser, etc)
+			Referrer (information about the site that started the connection)
+
+Body
+	Whatever you're trying to load from the server (HTML, JSON, etc)
+	Sometimes you also send request body to the server
+		When you submit a form to the server to download something, for example
+
+
+HTTP & WEB SERVERS
+Source: Udacity
+Link: https://www.udacity.com/course/http-web-servers--ud303
+
+Parts of a URI
+
+URI
+	Stands for Uniform Resource Identifier
+	A piece of text that you put into your web browser that tells it what page to go to
+	URL
+		Stands for Uniform Resource Locator
+		Is a URI for a resource on the network
+	It's made of some parts
+		E.g.: https://en.wikipedia.org/wiki/Fish#Evolution
+			"https" is the scheme
+				HTTP and HTTPS URIs point to resources served by a web server, but HTTPS uses encrypted connection (safer)
+				FILE points to resources located in the local filesystem
+				A scheme is always followed by ":"
+			"en.wikipedia.org" is the hostname
+				A hostname can only appear after a scheme, but not every URI has a hostname
+				A hostname is always preceded by a "//"
+			"/wiki/Fish/" is the path
+				A path identifies a particular resource on a server
+				When there is no path, the browser fills in the default path, which is a single "/", the root of the resource
+			"#Evolution" is the fragment
+				A fragment scrolls/points the page a specific named part of the resource, or id (in this case "Evolution")
+				A fragment is always preceded by a "#"
+Hostnames and ports
+	Hostnames
+		The hostname URI can also be expreseed by the IP of the server
+			E.g.: http://216.58.194.174/ is the same as https://www.google.com/
+		The client/browser actually always translates the hostname into an IP address
+			The operation system uses Domain Name Service (DNS) to look up hostnames and get back IP addresses
+	Port
+		All the network traffic that computers send and receive is split up into messages called "packets"
+			Each packet holds both client and server IP addresses and ports numbers
+				The IP address distinguish computers and the port distinguish the programs in those computers
+				A server listens on a port, i.e. the server wants to connect to clients on a particular port number
+		It's not always shown because the client usually figures it out from the scheme
+			HTTP uses port 80
+			HTTPS uses port 443
+			The http://localhost:8000/ only works because there isn't a default port that uses this value
+				Since there no default port for the localhost, you have to define it when running a local server
+
+HTTP GET requests
+	The request is composed by the method, or HTTP verb, the path, and the protocol
+		E.g.: GET /readme.png HTTP/1.1
+		"GET" is the method, which requires the server to send a resource
+		"/readme.png" is the path, in this case it an image file
+		"HTTP/1.1" is the protocol
+	The command "ncat" connects your computer to the server
+	When you connect to a server from the browser, it's actually GET requesting
+
+HTTP responses
+	It's made of three parts
+		Status line
+			It tells the client whether the server understood the request, whether the server has the resource the client asked for, and how to proceed next
+			Status code
+				The first digit of a status code indicates the general success of the request
+				1xx: informational
+					Request received and processing
+				2xx: success
+					Successfully received, understood and accepted
+				3xx: redirect
+					Further action must be taken
+				4xx: client error
+					Request does not have what it needs
+						E.g.: the server needs a name field in the request body that couldn't be found
+				5xx: server error
+					Server failed to fulfil an apparent valid request
+		Headers
+			It's the metadata for the response, telling the client diverse information about the response
+			Cookies
+				Web feature that lets servers store data on the browser, for instance to keep a user logged in
+			Content-type
+				indicates the kind of data that the server is sending
+				"general category"/"specific format"; charset="encoding fomat"
+					image/png
+					The encoding format, such as utf-8, is only used for text files
+			Content-length
+				How long the response body will be (in bytes)
+				The client can use this to reuse the connection to send other requests after the first response, without having to reconnect the server
+			Response body
+				Everything after the headers and a blank line is the response body
+				For status code equal to 200, the response body is a copy of all the resource asked by the client
+				When there is an error, the error shows exactly where the response body would be
+
+Queries and quoting
+	Queries parameters comes after a "?" sign, are written as a pair of key and value ("key=value"), and are separated by "&"
+	Quoting means translating a string into a form that doesn't have any special characters in it
+		A quoted URL can be later reverted to its original value
+		Quotes in an URL cannot have spaces, therefore, they are changed for a "+" sign
+		Whenever you're working on a web application and you find spaces or percent-signs in places you don't expect them to be, it means that something needs to be quoted or unquoted
+
+GET and POST
+	When working with forms, the GET method concatenate everything into the URI and send it to the server, just as a query, just like a search engine
+	The GET method is good for the search forms and other actions intended to look up or ask the server for a copy of some resource
+	POST is not idempotent, i.e. if you do it twice, it does not produces the same results, it actually sums up
+	When a browser submits a form as a POST request, it doesn't encode the form data in the URI path, the way it does with a GET request, instead, it sends the form data in the request body, underneath the headers.
+
+Post-Redirect-Get (PRG)
+	A client POSTs to a server to create an update the resource, the server replies with a 200, but redirect with 303, thus the client GETs the created or updated resource
+	E.g.: PRG in a Message Board
+		1. Go to the http://localhost:8000/
+		2. Browser sends a 200 GET request and a piece of HTML
+		3. You see a form and a list of existing comments
+		4. You write a comment and submit
+		5. Browser sends it via a POST request to the server
+		6. Server updates the list of comments and replies a 303 redirect
+		7. Server sets "Location: /" header to the browser and request main page via GET
+		8. The redirect response brings it back to the main page
+		9. Browser sends a 200 GET request
+
+Using a JSON API
+	JSON is a data format based on JavaScript
+
+What's an Apache or Nginx
+	Web was firstly developed to store static content, not applications
+	Softwares like Apache, Nginx or IIS serve static content very quickly and efficiently, and also provide access control, allowing only authenticated users to download particular static content
+	Some web applications have handle many requests, therefore, they dispatch it to different backend servers, avoiding overload a specific server, which is called request routing or load balancing
+		Load balancing also helps to recognize when some specific servers become unavailable, in this case the requests are redirected to backend servers that are currently running (reverse proxying), which makes possible to update some servers without request issues
+	A web service can't just handle one request at a time and then go on to the next one, it has to be able to handle concurrent users
+	Caching is a temporary storage for resources, avoid reloading objects that have to be resend
+		It's made through cache control headers
+		A web proxy can cache resources for a small app
+			It support more requests and enhances user experience, since the web proxy is faster than the app server
+
+Cookies
+	They're a way that a server can ask a browser to retain a piece of information, and send it back to the server when the browser makes subsequent requests	
+	They have names, values, and rules that define when they should be sent back
+	They handle sessions and logins, track activity in the web site for adverstising purposes, etc
+	In the first request with the server, the server sends back a response with a Set-Cookies header (name, values, attributes), and in every next connection the browser send the cookie back to the server
+	They're hard to be reached because removing or altering them can reduce user experience
+	Name and Value/Content
+		Analogous to a key value in a Python dictionary
+		They're sent back to the server
+		The value contains the real data
+			E.g.: unique token representing a logged-in user's session
+	Domain and Path
+		Describe the scope of the cookie
+		Domain is the hostname of the URI of the response
+	Send For/Secure and Accessible to Script/HttpOnly
+		If Secure is true, the cookie will only be sent via HTTPS (encrypted) connections
+		If HttpOnly is true, it's not accessible to JavaScript code running on the web page
+	Expires/Max-Age
+		Define when the browser should stop saving the cookie
+		If there is no expiration field, the cookie is expired when the browser is closed
+
+Applying cookies
+	To send a cookie all you need to do is to use Set-Cookie header on an HTTP response
+	To read a cookie you read the Cookie header
+	In Python http.cookies module provide handy utilities to format cookie headers
+
+HTTPS for security
+	HTTPS servers speaks HTTP, but with data encrypted with Transport Layer Security (TLS)
+		TLS is the same as Secure Sockets Layer (SSL)
+		It keeps connection private by encrypting everything over it
+		Let the browser authenticate the server, which garantees you're definitely talking to the server
+		Protect the integrity of the data, checking that it was not modified or replaced
+		TLS and the server's private key are mathematically related to each other through a system called public-key cryptography
+			The browser and the server can securely agree on a shared secret that only they can understand
+		Every request and response sent over a TLS connection is sent with a message authentication code (MAC)
+			The other end of the connection (server or browser) can verify to make sure that the message hasn't been altered or damaged in transit.
+
+Beyond GET and POST
+	PUT is used for creating new resources
+		The client sends the URI path that it wants to create, and a piece of data in the request body
+		The server responds a PUT with a 201 (created) status code for successfull action
+		After a PUT, a GET in the server will return the new data
+	DELETE is the distructive counter of PUT, so it removes the resources
+		If everything was deleted and no data was created, serve should return 401 (not found) status code
+	PATCH changes updates or changes the resource somehow (like a Git commit)
+		JSON Patch is one of the standards for HTTP PATCH requests
+	HEAD works like GET, but the server doesn't return any content, just headers
+	OPTION is used to find out what features the server supports
+	TRACE echoes back what the server received from the client
+		

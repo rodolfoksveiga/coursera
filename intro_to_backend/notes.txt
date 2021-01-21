@@ -1,0 +1,17 @@
+Differences between GET and POST
+
+GET
+    Parameters in URL
+    User for fetching documents
+    Maximum URL length
+    Okay to cache
+    Not okay to change the server
+
+POST
+    Parameters in body
+    User for updating data
+    No max length
+    Not okay to cache
+    Okay to change the server
+
+Anything that changes the server should be done as a POST, you should use POST forms, and not GET links to do permanent actions on the server, though

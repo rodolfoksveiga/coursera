@@ -1,0 +1,163 @@
+Understanding Java Syntax
+    Single quotes ('') works only with char variables
+
+Compiling with javac and byte code
+    The folder src, stands for the source folder
+    The package usually starts with com. and whatever is the name you pick
+        Inside the package folder are the main codes to run the application
+    To run a java code it's necessary to compile the file first
+        
+        $ javac Main.java
+
+    After the compilation a bytecode file with extension .class is generated
+
+Running Java programs from Terminal
+    Every Java program should have at least the main class and its method
+        
+        package com.owner
+        public class Main {
+            public static void main(..) {
+                ...
+            }
+        }
+
+        The method is the main entry point to execute the program
+    After compilling, you should use the following command in the source folder to run the app
+        
+        $ java com.owner.Main
+        
+        It's the java command, with the package name and the main class, separated by a dot
+
+Packages
+    The package is simply a folder structure that allows to group classes together
+    All classes in Java should start with a uppercase letter
+
+Comments
+    You can comment a single line using  //
+    Multiline comments start with /* and finish with */
+
+Creating variables
+    Primivite (simple) variables are created as follows
+        
+        type variableName;
+        type variableName = value/expression;
+
+    Reference (complex) variables are created as follows
+        
+        Type variableName;
+        Type variableName = Type();
+        Type variableName = new Type();
+
+Primitive data types
+    Always start with a lowercase letter
+        byte
+        short
+        int
+        long (followed by L)
+        float (followed by F)
+        double
+        boolean
+        char (single character)
+
+Reference types
+    Have many methods (variableName.method())
+    Always points to the same object
+    Always start with a uppercase letter
+        String
+        LocalDate
+
+Working with arrays
+    You can declare arrays with empty (must specify the length of the array) or actual values (any length is possible)
+
+    int [] numbers = new int[2]
+    int [] numbers = {1, 2, 3}
+
+Enhanced for loop
+    Used to loop inside an array
+    It gives access only to the actual value of the array, you couldn't access i+1 or i-1 index, for example
+
+    int [] numbers = {2, 0, 1, 4, 100}
+    for (int number : numbers) {
+        ...
+    }
+
+Do while
+    Quite the same as while, but executes the loop (inside "do") at least once
+    In the example bellow, the command inside "do" will be executed once
+    
+    int count = 0;
+    do {
+        ...
+        count++;
+    }
+    while (count < 0);
+
+Taking user input with the Scanner class
+    Takes user input from the console
+
+    Scanner scanner = new Scanner(System.in);
+    type variableName = scanner.nextLine();
+
+Methods
+    They are only run when they're called
+    They are used to clone any logic
+    A method is always followed by parenthesis
+    Static
+        It's used when you declare a variable that is commom for all the instances of a class
+        It can only access static data
+        It can only call other static methods
+        It can only be accessed directly by the class name and doesn't need any object
+        It cannot refer to this or super keywords
+   
+        // define method
+        public static type methodName(type var1, type var2) {
+            ...
+            ruturn ...;
+        }
+        // call method
+        methodName(value1, var2:value2)
+
+        Static and return do not necessarely have to be written
+
+Classes and objects
+    An object is anything that can represent something in the real world
+        It has attributes/properties and behaviours, such as length
+        When you use the keyword "new" followed by a class it means you're creating a new object
+    A class is a template or blueprint for creating objects
+        They describes attributes, which define the actual object that you want to create, and behaviours, which defines what the object can actually do
+
+Class and object example
+public class Main {
+    public static void main(String [] args) {
+        Passport germanPassport = new Passport(number:"123456",
+                                               expiryDate:LocalDate.of(year:2025, month=1, day=13),
+                                               country:"Germany")
+        Passport brazilianPassport = new Passport(number:"654321",
+                                                  expiryDate:LocalDate.of(year:2022, month=5, day=20),
+                                                  country:"Brazil")
+        System.out.println(germanPassport)
+        System.out.println(germanPassport.number)
+        System.out.println(germanPassport.expiryDate)
+        System.out.println(germanPassport.country)
+        System.out.println(brazilianPassport)
+        System.out.print(brazilianPassport)
+        System.out.print(brazilianPassport.number)
+        System.out.print(brazilianPassport.expiryDate)
+        System.out.print(brazilianPassport.country)
+    }
+    static class Passport {
+        String number;
+        LocalDate expiryDate;
+        String country;
+        Passport(String number, LocalDate expiryDate) {
+            this.number = number;
+            this.expiryDate = expiryDate;
+            this.country = country;
+        }
+    }
+}
+
+
+
+
+

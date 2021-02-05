@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<form method="POST">
+    <head>
+        <title>Signup</title>
+    </head>
+    <body>
+        <h2>Signup</h2>
+        Username <input type="text" name="username" value="{{username}}">
+        <b>{{username_error}}</b>
+        <br>
+        Password <input type="password" name="password">
+        <b>{{password_error}}</b>
+        <br>
+        Verify password <input type="password" name="verify">
+        <b>{{verify_error}}</b>
+        <br>
+        Email (optional) <input type="text" name="email" value="{{email}}">
+        <b>{{email_error}}</b>
+        <br>
+        <input type="submit" value="Submit">
+    </body>
+</form>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ASCII</title>
+    </head>
+
+    <body>
+        <h2>ASCII Art</h2>
+        {% if error %}
+            <h3>{{error}}</h3>
+        {% endif %}
+        <form method="POST">
+            <label>
+                <div>
+                    <b>Title</b>
+                </div>
+                <input type="text" name="title" value="{{title}}">
+            </label>
+            <br>
+            <br>
+            <label>
+                <div>
+                    <b>Art</b>
+                </div>
+                <textarea name="art" rows="20" cols="100">{{art}}</textarea>
+            </label>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

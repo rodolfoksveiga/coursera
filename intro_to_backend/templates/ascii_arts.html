@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <h2>ASCII Art</h2>
+        <h1>ASCII Art</h1>
         {% if error %}
             <h3>{{error}}</h3>
         {% endif %}
@@ -29,5 +29,17 @@
             <br>
             <input type="submit" value="Submit">
         </form>
+    {% if titles %}
+        <br>
+        <br>
+        <hr>
+        <h2>Last posts</h2>
+        {% for i in range(length) %}
+            <br>
+            <h3>Title: {{titles[i]}}</h3>
+            <h5>Posted at: {{dts[i]}}</h5>
+            <pre>{{arts[i]}}</pre>
+        {% endfor %}
+    {% endif %}
     </body>
 </html>

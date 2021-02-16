@@ -1,0 +1,29 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <b style='color: #B22222'>{{message}}</b>
+                    <br>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <br>
+        <form method='POST' action="{{url_for('login')}}">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.username) }}
+            {{ wtf.form_field(form.password) }}
+            <br>
+            {{ wtf.form_field(form.remember) }}
+            <br>
+            <br>
+            <input type='submit' value='Login'>
+        </form>
+    </body>
+</html>

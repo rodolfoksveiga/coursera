@@ -1,0 +1,12 @@
+function largestOfFour(arr) {
+  let largests = [];
+  for (let i in arr) {
+    largests[i] = arr[i][0];
+    for (let j in arr[i]) {
+      if (arr[i][j] > largests[i]) {
+        largests[i] = arr[i][j];
+      }
+    }
+  }
+  return largests;
+}

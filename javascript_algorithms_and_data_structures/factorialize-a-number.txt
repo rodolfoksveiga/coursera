@@ -1,0 +1,10 @@
+function factorialize(num) {
+  if (num == 0) {
+    return 1;
+  }
+  const lim = num;
+  for(let i = 1; i < lim; i++) {
+    num *= i;
+  }
+  return num;
+}

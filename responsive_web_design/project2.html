@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="project2.css" />
+
+<html>
+    <head>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Energy Consumption Survey Form</h1>
+            <p id="description"><i>Thanks for helping us</i></p>
+        </header>
+        <form id="survey-form">
+            <p><label id="name-label" for="name">Name</label></p>
+            <p>
+                <input
+                    name="name"
+                    id="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    class="input-field"
+                />
+            </p>
+            <p><label id="email-label" for="email">Email</label></p>
+            <p>
+                <input
+                    name="email"
+                    id="email"
+                    type="email"
+                    placeholder="Enter your Email"
+                    class="input-field"
+                />
+            </p>
+            <p>
+                <label id="consumption-label"
+                    >Energy consumption (kWh/year)</label
+                >
+            </p>
+            <p>
+                <input
+                    name="consumption"
+                    id="consumption"
+                    type="number"
+                    placeholder="Energy consumption"
+                    min="0"
+                    class="input-field"
+                />
+            </p>
+            <p><label id="number-label">Number of occupants</label></p>
+            <p>
+                <input
+                    name="number"
+                    id="number "
+                    type="number"
+                    placeholder="Number"
+                    min="1"
+                    max="5"
+                    class="input-field"
+                />
+            </p>
+            <p>
+                <label id="income-label" for="income">Family income</label>
+            </p>
+            <select
+                name="income"
+                id="dropdown"
+                placeholder="Select your family income"
+                required
+                class="input-field"
+            >
+                <option disabled selected>Select an option</option>
+                <option value="income-low">Income < 2500</option>
+                <option value="income-medium">2500 < Income < 5000</option>
+                <option value="income-high">5000 < Income</option>
+            </select>
+            <p>Building Typology</p>
+            <p>
+                <label id="typology-apartment-label" for="typology-apartment">
+                    <input
+                        name="typology"
+                        id="typology-apartment"
+                        type="radio"
+                        checked
+                    />
+                    Apartment
+                </label>
+            </p>
+            <p>
+                <label id="typology-house-label" for="typology-house">
+                    <input
+                        name="typology"
+                        id="typology-house"
+                        type="radio"
+                        checked
+                    />
+                    House
+                </label>
+            </p>
+            <p>House appliances</p>
+            <p>
+                <label id="appliances-heater-label" for="appliances-heater">
+                    <input
+                        name="appliances"
+                        id="appliances-heater"
+                        type="checkbox"
+                    />
+                    Heater
+                </label>
+            </p>
+            <p>
+                <label id="appliances-hvac-label" for="appliances-hvac">
+                    <input
+                        name="appliances"
+                        id="appliances-hvac"
+                        type="checkbox"
+                    />
+                    Air-conditioning
+                </label>
+            </p>
+            <p>
+                <label
+                    id="appliances-refrigerator-label"
+                    for="appliances-refrigerator"
+                >
+                    <input
+                        name="appliances"
+                        id="appliances-refrigerator"
+                        type="checkbox"
+                    />
+                    Refrigerator
+                </label>
+            </p>
+            <p>
+                <label id="appliances-freezer-label" for="appliances-freezer">
+                    <input
+                        name="appliances"
+                        id="appliances-freezer"
+                        type="checkbox"
+                    />
+                    Freezer
+                </label>
+            </p>
+            <p>
+                <label id="appliances-stove-label" for="appliances-stove">
+                    <input
+                        name="appliances"
+                        id="appliances-stove"
+                        type="checkbox"
+                    />
+                    Stove
+                </label>
+            </p>
+            <p>
+                <label id="appliances-oven-label" for="appliances-oven">
+                    <input
+                        name="appliances"
+                        id="appliances-oven"
+                        type="checkbox"
+                    />
+                    Oven
+                </label>
+            </p>
+            <p>
+                <label id="appliances-tv-label" for="appliances-tv">
+                    <input
+                        name="appliances"
+                        id="appliances-tv"
+                        type="checkbox"
+                    />
+                    Television
+                </label>
+            </p>
+            <p>
+                <label id="comment-label" for="comment"
+                    >Commentary on your energy consumption profile</label
+                >
+            </p>
+            <textarea
+                id="comment"
+                placeholder="Enter your comment here..."
+                rows="5"
+                class="input-field"
+            ></textarea>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+    </body>
+</html>

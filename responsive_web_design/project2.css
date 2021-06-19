@@ -1,0 +1,41 @@
+body {
+    background-image: linear-gradient(rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75)), url('https://cms.qz.com/wp-content/uploads/2018/04/wind-turbines-renewable-energy.jpg?quality=80&strip=all&w=1600');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form::placeholder {
+    color: rgb(196, 196, 196);
+}
+
+select {
+    color: rgb(102, 102, 102);
+}
+
+select:invalid {
+    color: rgb(196, 196, 196);
+}
+
+textarea {
+    color: rgb(102, 102, 102);
+}
+
+.input-field {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 0.25rem;
+    color: rgb(102, 102, 102);
+    background-color: rgb(255, 255, 255);
+}

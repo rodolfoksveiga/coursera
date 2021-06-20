@@ -1,223 +1,23 @@
 <!DOCTYPE html>
 
-<link rel='stylesheet' type='text/css' href='project2.css' />
+<link rel='stylesheet' type='text/css' href='project3.css' />
 
 <html>
     <head>
-        <title>Survey Form</title>
+        <title>Product Landing Page</title>
     </head>
     <body>
-        <header>
-            <h1 id='title'>Energy Consumption Survey Form</h1>
-            <p id='description'><i>Thanks for helping us</i></p>
+        <header id='header'>
+            <div class='logo'>
+                <img id='header-img' src='project3-logo.jpg' />
+            </div>
+            <nav id='nav-bar'>
+                <ul >
+                    <li><a class='nav-link' href='#section1'>Section 1</a></li>
+                    <li><a class='nav-link' href='#section2'>Section 2</a></li>
+                    <li><a class='nav-link' href='#section3'>Section 3</a></li>
+                </ul>
+            </nav>
         </header>
-        <form id='survey-form'>
-            <div class='form-group'>
-                <label id='name-label' for='name' class='form-label'>Name</label>
-                <input
-                    name='name'
-                    id='name'
-                    type='text'
-                    placeholder='Enter your name'
-                    class='form-field'
-                />
-            </div>
-            <div class='form-group'>
-                <label id='email-label' for='email' class='form-label'>Email</label>
-                <input
-                    name='email'
-                    id='email'
-                    type='email'
-                    placeholder='Enter your Email'
-                    class='form-field'
-                />
-            </div>
-            <div class='form-group'>
-                <label id='consumption-label' class='form-label'>Energy consumption (kWh/year)</label>
-                <input
-                    name='consumption'
-                    id='consumption'
-                    type='number'
-                    placeholder='Energy consumption *'
-                    min='0'
-                    required
-                    class='form-field'
-                />
-            </div>
-            <div class='form-group'>
-                <label id='number-label' class='form-label'>Number of occupants</label>
-                <input
-                    name='number'
-                    id='number '
-                    type='number'
-                    placeholder='Number *'
-                    min='1'
-                    max='5'
-                    required
-                    class='form-field'
-                />
-            </div>
-            <div class='form-group'>
-                <label id='income-label' for='income' class='form-label'>Family income</label>
-                <select
-                    name='income'
-                    id='dropdown'
-                    required
-                    class='form-field'
-                >
-                <option disabled selected>Select an option</option>
-                <option value='income-low'>Income < 2500</option>
-                <option value='income-medium'>2500 < Income < 5000</option>
-                <option value='income-high'>5000 < Income</option>
-            </select>
-            </div>
-            <div class='form-group'>
-            <label id='typology-label' class='form-label'>Building typology</label>
-                <label
-                    id='typology-apartment-label'
-                    for='typology-apartment'
-                    class='option-label'
-                >
-                    <input
-                        name='typology'
-                        id='typology-apartment'
-                        type='radio'
-                        checked
-                        class='option-button'
-                    />
-                    Apartment
-                </label>
-                <label
-                    id='typology-house-label'
-                    for='typology-house'
-                    class='option-label'
-                >
-                    <input
-                        name='typology'
-                        id='typology-house'
-                        type='radio'
-                        class='option-button'
-                    />
-                    House
-                </label>
-            </div>
-            <div class='form-group'>
-                <label
-                    id='appliances-label'
-                    class='form-label-after-option'
-                >
-                    House appliances
-                </label>
-                <label
-                    id='appliances-heater-label'
-                    for='appliances-heater'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-heater'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Heater
-                </label>
-                <label
-                    id='appliances-hvac-label'
-                    for='appliances-hvac'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-hvac'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Air-conditioning
-                </label>
-                <label
-                    id='appliances-refrigerator-label'
-                    for='appliances-refrigerator'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-refrigerator'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Refrigerator
-                </label>
-                <label
-                    id='appliances-freezer-label'
-                    for='appliances-freezer'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-freezer'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Freezer
-                </label>
-                <label
-                    id='appliances-stove-label'
-                    for='appliances-stove'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-stove'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Stove
-                </label>
-                <label
-                    id='appliances-oven-label'
-                    for='appliances-oven'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-oven'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Oven
-                </label>
-                <label
-                    id='appliances-tv-label'
-                    for='appliances-tv'
-                    class='option-label'
-                >
-                    <input
-                        name='appliances'
-                        id='appliances-tv'
-                        type='checkbox'
-                        class='option-button'
-                    />
-                    Television
-                </label>
-            </div>
-            <div class='form-group'>
-                <label
-                    id='comment-label'
-                    for='comment'
-                    class='form-label-after-option'
-                >
-                    Describe your energy consumption profile
-                </label>
-                <textarea
-                    id='comment'
-                    placeholder='Enter your description here...'
-                    rows='5'
-                    class='form-field'
-                ></textarea>
-            </div>
-            <div class='form-group'>
-                <input type='submit' value='Submit' class='submit-button' />
-            </div>
-        </form>
     </body>
 </html>

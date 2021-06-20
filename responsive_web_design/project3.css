@@ -1,82 +1,38 @@
 body {
-    background-image: url('https://cms.qz.com/wp-content/uploads/2018/04/wind-turbines-renewable-energy.jpg?quality=80&strip=all&w=1600');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: white;
+    background-color: rgb(255, 255, 175)
 }
 
 header {
-    text-align: center;
-}
-
-form {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-form::placeholder {
-    color: rgb(196, 196, 196);
-}
-
-select {
-    color: rgb(51, 51, 51);
-}
-
-select:invalid {
-    color: rgb(196, 196, 196);
-}
-
-textarea {
-    color: rgb(51, 51, 51);
-}
-
-.form-group {
+    position: fixed;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
 }
 
-.form-field {
-    font-size: 20px;
-    color: rgb(51, 51, 51);
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 0.25rem;
-    margin-bottom: 20px;
+.logo {
+    width: 60vw;
 }
 
-.form-label {
-    font-size: 26px;
-    font-weight: bold;
+#header-img {
+    width: 200px;
+    height: 75px;
+    padding-left: 25px;
 }
 
-.form-label-after-option {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.option-label {
+ul {
+    width: 40vw;
     display: flex;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.option-button {
-    margin-right: 6px;
-    height: 16px;
-    width: 16px;
+.nav-link {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
 }
 
-.submit-button {
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(102, 204, 0);
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgb(102, 204, 0);
-    border-radius: 0.25rem;
-}

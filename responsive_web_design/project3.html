@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 
-<link rel='stylesheet' type='text/css' href='project3.css' />
-
 <html>
     <head>
+        <link rel='stylesheet' type='text/css' href='project3.css' />
         <title>Product Landing Page</title>
     </head>
     <body>
@@ -26,6 +25,7 @@
                     class='thick-border'
                     type='email'
                     placeholder='Enter your email here'
+                    autocomplete='off'
                 />
                 <button id='submit' class='thick-border' type='submit'>
                     Receive our news
@@ -65,10 +65,15 @@
             </div> 
         </section>
         <section id='video-section'>
-            <iframe id='video' src='https://www.youtube.com/embed/PXmLP8dJAvU' frameborder='0' allowfullscreen>
+            <iframe
+                id='video'
+                src='https://www.youtube.com/embed/PXmLP8dJAvU'
+                frameborder='0'
+                allowfullscreen
+            ></iframe>
         </section>
         <section id='pricing-section'>
-            <div id='product1' class='product-item'>
+            <div id='product1' class='product-item thick-border'>
                 <img id='product1-img'
                      src='project3-dafin1.jpg'
                      class='product-img'
@@ -77,33 +82,42 @@
                     DaFiN Pro Classic
                 </div>
                 <div id='product1-price' class='product-price'>
-                    $69.95 
+                    $69.95
                 </div>
+                <button id='product1-button' class='product-button thick-border'>Add to cart</button>
             </div> 
-            <div id='product2' class='product-item'>
+            <div id='product2' class='product-item thick-border'>
                 <img id='product2-img'
                      src='project3-dafin2.jpg'
                      class='product-img'
                 />
                 <div id='product2-name' class='product-text'>
-                    Kicks Kai Blue 
+                    DaFiN Kicks Kai
                 </div>
                 <div id='product2-price' class='product-price'>
-                    $60.95 
+                    $65.95
                 </div>
+                <button id='product2-button' class='product-button thick-border'>Add to cart</button>
             </div> 
-            <div id='product3' class='product-item'>
+            <div id='product3' class='product-item thick-border'>
                 <img id='product3-img'
                      src='project3-dafin3.jpg'
                      class='product-img'
                 />
                 <div id='product3-name' class='product-text'>
-                    DaFiN Fin Savers 
+                    DaFiN Fin Savers
                 </div>
                 <div id='product3-price' class='product-price'>
-                    $21.95 
+                    $21.95
                 </div>
+                <button id='product3-button' class='product-button thick-border'>Add to cart</button>
             </div> 
         </section>
+        <footer id='footer'>
+            <div id='foot-info'>
+                <a id='foot-link' href='#'>Top</a>
+                <div id='foot-text'>Copyright © 2021 DaFiN Surfing Products</div>
+            </div>
+        </footer>
     </body>
 </html>
